@@ -21,3 +21,4 @@ python portscanner.py
 ```
 
 You will be prompted to input any informations needed. It will then go through the given ports and give you a colored feedback on what ports are open (green) ore closed (red).
+I´ve compiled the .py file into an .exe, too.
