@@ -5,7 +5,14 @@ import socket
 import time
 from termcolor import colored
 ```
-They also can be found in the requirements.txt
+They also can be found in the requirements.txt. This is the command for installing the requirement:
+```
+pip install -r requirements.txt
+```
+Or:
+```
+pip install termcolor
+```
 When installed with pip, you can start the script by opening a terminal and navigating to the corresponding folder.
 Then type the following:
 
