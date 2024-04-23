@@ -1,3 +1,4 @@
+import os
 import socket
 import time
 from termcolor import colored
@@ -33,6 +34,7 @@ def scan_ports(address, portrange):
     end = time.time()
     duration = end - start
     print(f"Vorgang in {duration} Sekunden abgeschlossen :)")
+    os.system("pause")
 
 
 target = input("Bitte Zieladresse eingeben: ")
