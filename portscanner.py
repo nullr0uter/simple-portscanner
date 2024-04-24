@@ -1,5 +1,5 @@
-import os
 import socket
+import os
 import time
 from termcolor import colored
 
@@ -17,6 +17,7 @@ def scan_ports(address, portrange):
     start = time.time()
     results = []
     fails = []
+    outputfile = "C:\\PATH\\TO\\YOUR\\OUTPUTFILE\\output.log"
     print(f"Starte Scan für {address}")
     for port in range(1, portrange + 1):
         try:
@@ -31,11 +32,14 @@ def scan_ports(address, portrange):
         except KeyboardInterrupt:
             print(f"Vorgang durch Nutzer beendet")
             return False
+        finally:
+            with open(outputfile, 'w', encoding='utf-8') as resultfile:
+                    resultfile.write(f"Offene Ports:\n{results}\n")
+                    resultfile.write(f"Geschlossene Ports:\n{fails}\n")
     end = time.time()
     duration = end - start
     print(f"Vorgang in {duration} Sekunden abgeschlossen :)")
     os.system("pause")
-
 
 target = input("Bitte Zieladresse eingeben: ")
 portrange = input("Bis zu welchem Port möchtest Du scannen (Standard wäre bis 100)? ")
